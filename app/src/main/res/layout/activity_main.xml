@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="320dp">
+
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/motionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minHeight="56dp"
+                app:layoutDescription="@xml/activity_main_scene"
+                app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/background"
+                    android:layout_width="0dp"
+                    android:layout_height="800dp"
+                    android:background="@drawable/back3"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/toolbarColor"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:alpha="0"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_margin="@dimen/margin3"
+                    android:adjustViewBounds="true"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/plane" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/design_default_color_background"
+                    android:textSize="48sp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="264dp" />
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/travelList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+        <include
+            android:id="@+id/noTravelLayout"
+            layout="@layout/no_travel_layout"
+            android:visibility="gone" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/margin3"
+            android:backgroundTint="@color/colorPrimary"
+            android:src="@drawable/baseline_add_black_18dp"
+            android:tint="@color/colorPrimary" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
